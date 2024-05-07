@@ -133,3 +133,6 @@ dmypy.json
 
 # Pyrogram sessions
 .session
+
+ffmpeg.exe
+main.py
