@@ -1,7 +1,6 @@
 from pathlib import Path
 import base64
-from .tags import TagCollection
-# from .tags_table import translate_dictionary as td
+from tags import TagCollection
 from mutagen import aac, wave, mp3, id3, flac, oggvorbis, File, FileType
 from pydub import AudioSegment
 
@@ -120,11 +119,6 @@ def converter(input_path: Path, export_path: Path, export_format: str) -> Path:
 		audio.export(
 				export_path, format=export_format, bitrate=bitrates.get(export_format), parameters=('-q:a', '0')
 		)
-	return export_path
-
-
-def converter_wrapper(input_path: Path, export_path: Path, export_format: str) -> Path:
-	converter(input_path, export_path, export_format)
 	tags = tag_extractor(input_path)
 	tag_inserter(tags, export_path)
 	return export_path

@@ -1,7 +1,7 @@
 from typing import Any
 from mutagen import flac, id3
 from abc import ABC, abstractmethod
-from .tags_table import translate_dictionary as td
+from tags_table import translate_dictionary as td
 
 
 def _interpolate_int(from_, to_, value):
