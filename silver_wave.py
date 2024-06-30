@@ -275,7 +275,7 @@ def _id3_extractor(f: Path) -> TagCollection:
 	for tag in values:
 		tags.append(tag)
 
-	print([x.__str__() for x in tags.get_tags])
+	print([str(x) for x in tags.get_tags])
 	return tags
 
 
